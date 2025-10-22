@@ -178,8 +178,7 @@ else
     echo "2) Keep in current directory ($TEMP_DIR)"
 fi
 
-echo -n "Enter your choice: "
-read -n 1 -r
+read -p "Enter your choice: " -n 1 -r
 echo ""
 
 if [ "$HAS_GO" = true ]; then
