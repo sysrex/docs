@@ -27,7 +27,7 @@ done
 # Check if the directory exists
 if [ -d "$TEMP_DIR" ]; then
     read -p "Directory $TEMP_DIR exists. Do you want to clear it out? (y/n) " -n 1 -r
-    echo    # move to a new line
+    printf "\n"
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
         rm -rf "$TEMP_DIR"
@@ -178,8 +178,9 @@ else
     echo "2) Keep in current directory ($TEMP_DIR)"
 fi
 
-read -p "Enter your choice: " -n 1 -r
-echo # move to a new line
+printf "Enter your choice: "
+read -n 1 -r
+printf "\n"
 
 if [ "$HAS_GO" = true ]; then
     case $REPLY in
