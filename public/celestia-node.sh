@@ -180,7 +180,7 @@ fi
 
 echo -n "Enter your choice: "
 read -n 1 -r
-echo
+echo ""
 
 if [ "$HAS_GO" = true ]; then
     case $REPLY in
