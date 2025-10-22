@@ -178,7 +178,15 @@ else
     echo "2) Keep in current directory ($TEMP_DIR)"
 fi
 
-read -p "Enter your choice: " -n 1 -r; echo
+# Check if running in non-interactive mode (piped through curl)
+if [ -t 0 ]; then
+    # Interactive mode - prompt user
+    read -p "Enter your choice: " -n 1 -r; echo
+else
+    # Non-interactive mode - use default choice
+    echo "Non-interactive mode detected. Using default choice: 1"
+    REPLY="1"
+fi
 
 if [ "$HAS_GO" = true ]; then
     case $REPLY in
