@@ -179,7 +179,7 @@ else
 fi
 
 read -p "Enter your choice: " -n 1 -r
-echo
+printf '\n'
 
 if [ "$HAS_GO" = true ]; then
     case $REPLY in
